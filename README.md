@@ -12,29 +12,29 @@ single deep neural network를 사용한 객체 탐지 기법으로, SSD라고 �
 
 입력 이미지의 해상도가 낮더라도 높은 정확도로 객체 탐지가 가능함
 
-# Model
+# Description
 
-1.Multi scale maps for detection
+SSD는 다양한 view를 활용하면서 통합된 
 
-기본 네트워크 다음 여러 CNN 피처를 덧붙입니다.
+network 구조를 가진 1-stage detector로 높은 정확도와
 
-CNN layer에서 이미지의 여러 특징들을 추출하여 객체 탐지에 활용합니다.
+빠른 속도를 가진 모델임
 
-![image](https://github.com/eumtaewon/SSD_Review/assets/104436260/a7fbc8b6-21f3-4213-9bfe-283feb5c5996)
+# Review
 
-SSD는 여러 차례 합성곱 여산을 해서 다양한 크기의 피처 맵을 만듭니다.
+![image](https://github.com/eumtaewon/SSD_Review/assets/104436260/3dfb7e47-970b-413c-871e-fa82b85ff843)
 
-다양한 피처맵마다 픽셀당 가로, 세로 비율이 다른 디폴트 박스가 있습니다.
+SSD 모델은 VGG16을 backbone으로 사용하고 보조 network(auxiliary network)를 추가한 구조를 가짐
 
-![image](https://github.com/eumtaewon/SSD_Review/assets/104436260/6417e9ec-9efa-4018-82f6-ffb63098cc6e)
+먼저 VGG16을 기반으로 이미지의 특징을 추출한 후, 추가적으로 CNN layer를 더 쌓아서 다양한 크기의 피처맵을 추출함
 
-각 디폴트 박스마다 경계 박스 좌표와, 경계 박스의 객체 신뢰도 점수(박스에 객체가 존재하는 지 여부를 점수화한 수치)를 예측합니다.
+따라서 다양한 크기의 객체를 탐지할 수 있게 됨
 
-훈련 단계에서는 디폴트 박스를 먼저 ground truth boxes와 매칭함.
+*여기서 VGG16의 fully connected layer는 보조 네트워크의 conv layer로 대체되어 학습이 진행됨
 
-위의 이미지 처럼 두 가지 디폴트 박스가 고양이, 강아지에 매칭이 된다면.
 
-이 두 디폴트 박스만을 Positive로 간주하고 나머지 디폴트 박스는 Negative로 간주함
+
+
 
 
 
