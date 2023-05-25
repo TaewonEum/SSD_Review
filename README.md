@@ -44,7 +44,27 @@ SSD의 입력 이미지 크기는 300x300입니다.
 
 다양한 scale의 feature map을 사용하여 다양한 크기의 객체를 탐지하는 것이 가능함.
 
+# Default Boxes
 
+원본 이미지에서 보다 다양한 크기의 객체 탐지를 위해 피처맵의 각 cell마다 서로 다른 스케일과 가로, 세로 비율을 가진 Default box를 생성함
+
+즉, 위의 이미지 처럼 38x38, 19x19, 10x10, 5x5, 3x3, 1x1 총 6개의 scale의 feature map의 각 cell마다 default box를 생성함
+
+Default box의 scale은 원본 이미지에 대한 비율을 의미함
+
+# scale 공식
+
+![image](https://github.com/eumtaewon/SSD_Review/assets/104436260/fbf13414-5d35-4197-8f95-c6410a6ababd)
+
+첫 피처맵의 scale은 0.34
+
+마지막 피쳐맵의 scale은 0.9입니다
+
+피처맵의 scale이 작아질수록 디폴트 박스의 스케일은 커집니다.
+
+즉 크기가 작아질수록 작은 피처 맵에서는 입력 이미지의 큰 영역이 
+
+해당 피처 맵의 각 위치에 매핑되므로, 큰 물체를 감지하는 데 가장 적합하다는 논리입니다.
 
 
 
