@@ -30,19 +30,23 @@ SSD 모델은 VGG16을 backbone으로 사용하고 보조 network(auxiliary netw
 
 따라서 다양한 크기의 객체를 탐지할 수 있게 됨
 
+중간 중간 피처맵들에서 모두 Object Detection을 수행함.
+
 *여기서 VGG16의 fully connected layer는 보조 네트워크의 conv layer로 대체되어 학습이 진행됨
 
 전체 네트워크는 CNN을 사용한 이미지 분류와 크게 다를 것이 없어 보임
 
-SSD에서는 다양한 크기의 피처맵을 사용합니다.
+# 특징 
 
-SSD의 입력 이미지 크기는 300x300입니다. 
+1. SSD에서는 다양한 크기의 피처맵을 사용합니다.
 
-다양한 크기의 피처맵을 사용한다고 하였는데 총 6개의 크기가 다른 feature map을 추출합니다.
+2. SSD의 입력 이미지 크기는 300x300입니다. 
+
+3. 다양한 크기의 피처맵을 사용하고 6개의 크기가 다른 feature map을 추출합니다.
 
 ![image](https://github.com/eumtaewon/SSD_Review/assets/104436260/aba784b6-94ac-4254-a12c-0f6298ddeb39)
 
-다양한 scale의 feature map을 사용하여 다양한 크기의 객체를 탐지하는 것이 가능함.
+4. 다양한 scale의 feature map을 사용하여 다양한 크기의 객체를 탐지하는 것이 가능함.
 
 # Default Boxes
 
