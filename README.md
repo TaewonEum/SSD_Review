@@ -46,7 +46,17 @@ Detector & Classifier를 통과시켜 Object Detection을 수행함.
 
 # Detector & classifier 구조
 
+Localization(탐지)와 Classification(분류) 작업을 수행함
+
+Localization은 Bounding Box위치를 조정하여, 객체의 위치를 더 정확하게 탐지하는 역할을 함.
+
+회귀문제로 취급되며 4개의 값 예측(좌표값을 예측한다는 의미)
+
+Classification에서는 Box가 포함하는 객체의 클래스를 예측함. 즉 클래스 분류임
+
 ![image](https://github.com/eumtaewon/SSD_Review/assets/104436260/6c5c3f77-c175-4bdd-b821-febd42b91cf3)
+
+위의 이미지는 컨볼루션 중간에 있는 5x5x256 피처맵을 대상으로 Object Detection을 수행하는 과정입니다.
 
 
 
