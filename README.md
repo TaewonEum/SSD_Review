@@ -38,6 +38,17 @@ SSD 모델은 VGG16을 backbone(ImageNet Data Pretrained)으로 사용하고 보
 
 전체 네트워크는 CNN을 사용한 이미지 분류와 크게 다를 것이 없어 보임
 
+# 각 단계별 피처맵 Object Detection
+
+VGG layer와 Convolution layer를 통과하는 각각의 Feature map 단계에서
+
+Detector & Classifier를 통과시켜 Object Detection을 수행함.
+
+# Detector & classifier 구조
+
+![image](https://github.com/eumtaewon/SSD_Review/assets/104436260/6c5c3f77-c175-4bdd-b821-febd42b91cf3)
+
+
 
 
 
