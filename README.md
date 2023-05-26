@@ -24,6 +24,8 @@ network 구조를 가진 1-stage detector로 높은 정확도와
 
 ![image](https://github.com/eumtaewon/SSD_Review/assets/104436260/3dfb7e47-970b-413c-871e-fa82b85ff843)
 
+![image](https://github.com/eumtaewon/SSD_Review/assets/104436260/7ee10996-1b7b-4a5f-85d0-f33d46e5e415)
+
 SSD 모델은 VGG16을 backbone(ImageNet Data Pretrained)으로 사용하고 보조 network(auxiliary network)를 추가한 구조를 가짐
 
 먼저 VGG16을 기반으로 이미지의 특징을 추출한 후, 추가적으로 CNN layer를 더 쌓아서 다양한 크기의 피처맵을 추출함
