@@ -149,6 +149,8 @@ fk가 25라고 한다면 아래와 같은 결과가 나옴
 
 ![image](https://github.com/eumtaewon/SSD_Review/assets/104436260/d8c7542a-5e86-4ce1-8d2d-37ed370caf58)
 
+# Loss Function
+
 
 
 
