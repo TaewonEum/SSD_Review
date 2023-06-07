@@ -89,6 +89,16 @@ Classification에서는 Box가 포함하는 객체의 클래스를 예측함. �
 
 *디폴트 박스란 Faster R-CNN에서 anchor의 개념으로 비율과 크기가 각기 다른 기본 박스를 먼저 설정해서 Bounding Box를 추론하는데 도움을 주는 장치입니다.
 
+이렇게 각 층별 피처맵들을 가져와 Object Detection을 수행한 결과들을 모두 합하여 Loss를 구하고 전체 네트워크를 학습 시키는 방식으로 Object Detection 모델을 구성합니다
+
+# 디폴트 박스 생성 방법
+
+Object Detection을 수행할 Feature map의 개수->m
+
+피처맵 각각의 Index=k
+
+## 예시
+
 
 
 
