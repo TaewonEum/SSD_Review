@@ -93,7 +93,7 @@ Classification에서는 Box가 포함하는 객체의 클래스를 예측함. �
 
 # 디폴트 박스 생성 방법
 
-Object Detection을 수행할 Feature map의 개수->m
+Object Detection을 수행할 Feature map의 개수=m
 
 피처맵 각각의 Index=k
 
@@ -102,6 +102,54 @@ Object Detection을 수행할 Feature map의 개수->m
 ![image](https://github.com/eumtaewon/SSD_Review/assets/104436260/eb658ed6-aa53-45c4-8a82-a739f76f9ed5)
 
 ## 예시
+
+s_min=0.2
+
+s_max=0.9
+
+min~max의 구간에서 m값에 따라 적당한 구간을 나눔
+
+m=6일때, 결과는 [0.2, 0.34, 0.48, 0.62, 0.76, 0.9]
+
+해당 값들의 의미는 각각의 피처맵에서 default box의 크기를 계산할 때 입력 이미지 넓이, 높이에 대해 얼만큼 큰지를 나타내는 값임
+
+즉, 첫번째 피처맵에서는 입력 이미지의 0.2 비율을 가진 작은 박스를 default box로 놓겠다는 의미임
+
+각각의 디폴트 박스의 넓이와 높이를 계산
+
+정사각형 뿐만이 아닌, 다양한 비율을 가진 디폴트 박스를 구해야 함
+
+이를 (1,2,3,1/2,1/3) 비율 값을 통해 아래 수식을 계산함
+
+![image](https://github.com/eumtaewon/SSD_Review/assets/104436260/4db36669-12db-4f99-93e3-d2f76ff1399c)
+
+예를들어 k=3, 즉 3번째 피처맵의 디폴트 박스들의 width와 height를 구해보면
+
+위에서 구한 scale값을 통해 k=3일때 값은 0.48임(0.2, 0.34, 0.48, 0.62, 0.76, 0.9에서 3번째 scale)
+
+![image](https://github.com/eumtaewon/SSD_Review/assets/104436260/99fd58fe-9dae-41a9-967d-011da5f14c62)
+
+5개의 비율에 대한 계산을 진행하고, 추가적으로 현재 스케일 값 보다 조금 더 큰 정사각형 박스를 하나 추가하여 총 6개의 디폴트박스를 생성합니다.
+
+입력 이미지에서 디폴트 박스가 위치할 중심점
+
+![image](https://github.com/eumtaewon/SSD_Review/assets/104436260/5b720a5e-8a10-4c22-b1d3-3af05648c2b9)
+
+fk는 피처맵의 가로 세로 크기, 즉 mxn 크기 피처맵의 중심정을 구하는 것
+
+1x1의 피처맵이라면 중심점은 0.5,0.5rk ehla
+
+이를 한 칸씩 인덱스를 옮겨가며 계산해주는 작업임
+
+fk가 25라고 한다면 아래와 같은 결과가 나옴
+
+![image](https://github.com/eumtaewon/SSD_Review/assets/104436260/5bc0b67e-5327-4c0b-abf2-0f6be1f9172f)
+
+이를 시각화하면 아래와 같음
+
+![image](https://github.com/eumtaewon/SSD_Review/assets/104436260/d8c7542a-5e86-4ce1-8d2d-37ed370caf58)
+
+
 
 
 
