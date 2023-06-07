@@ -97,6 +97,10 @@ Object Detection을 수행할 Feature map의 개수->m
 
 피처맵 각각의 Index=k
 
+각 피처맵별 scale level 수식
+
+![image](https://github.com/eumtaewon/SSD_Review/assets/104436260/eb658ed6-aa53-45c4-8a82-a739f76f9ed5)
+
 ## 예시
 
 
