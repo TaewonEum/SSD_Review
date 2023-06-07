@@ -151,9 +151,13 @@ fk가 25라고 한다면 아래와 같은 결과가 나옴
 
 # Loss Function
 
+전체적인 로스의 function은 yolo의 로스 function과 매우 유사함
 
+![image](https://github.com/eumtaewon/SSD_Review/assets/104436260/52c8c806-4d8e-4940-964e-3c021b90819d)
 
+전체 로스는 각 클래스 별로 예측한 값과 실제 값의 차이인 Lconf와 바운딩 박스 회귀 예측 값과 실제 값의 차이인 Lloc를 더한 값임
 
+# Lconf
 
-
+![image](https://github.com/eumtaewon/SSD_Review/assets/104436260/8f7b5d69-0fd2-4bbd-ba50-1ea8b9655d6d)
 
