@@ -175,4 +175,9 @@ xpij라는 값이 보이는데 이 값은 어떠한 그리드의 i번째 디폴�
 
 smoothL1은 Fast RCNN에서 제시된 Robust bounding box regression loss입니다.
 
+예측 값과 라벨 값의 차가 1보다 작으면 0.5x^2로 L2 distance를 계산하고, 1보다 크면 L1 distance를 계산함
+
+![image](https://github.com/eumtaewon/SSD_Review/assets/104436260/4350ae94-3acd-4285-bef5-7927fcc4c886)
+
+
 
