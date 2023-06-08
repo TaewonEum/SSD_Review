@@ -161,3 +161,18 @@ fk가 25라고 한다면 아래와 같은 결과가 나옴
 
 ![image](https://github.com/eumtaewon/SSD_Review/assets/104436260/8f7b5d69-0fd2-4bbd-ba50-1ea8b9655d6d)
 
+딥러닝 분류 문제에 주로 사용되는 손실 함수인 Cross Entrophy와 비슷함
+
+xpij라는 값이 보이는데 이 값은 어떠한 그리드의 i번째 디폴트 박스가 p클래스의 j번째 ground truth box(실제 객체의 바운딩 박스)
+
+와 매치되는 값의 차이를 구하는 것임.
+
+뒤에 수식은 물체가 없다고 판별한 디폴트 박스중 물체가 있는 경우의 Loss를 계산하는 수식임
+
+# Lloc
+
+![image](https://github.com/eumtaewon/SSD_Review/assets/104436260/a00cd4e8-41c4-4f42-87e8-8eb9ad1d61ce)
+
+smoothL1은 Fast RCNN에서 제시된 Robust bounding box regression loss입니다.
+
+
