@@ -179,5 +179,14 @@ smoothL1은 Fast RCNN에서 제시된 Robust bounding box regression loss입니�
 
 ![image](https://github.com/eumtaewon/SSD_Review/assets/104436260/4350ae94-3acd-4285-bef5-7927fcc4c886)
 
+그 아래는 bounding box regression 시에 사용하는 예측 값들
 
+x, y 좌표 값은 절대 값이기 때문에 예측값과 실제 값 사이의 차를 default 박스의 너비 혹은 높이로 나눔. 이렇게 해주면 값이 0에서 1 사이로 정규화되는 효과가 있습니다. 
 
+너비와 높이의 경우엔 로그를 씌워서 정규화 시킨 것입니다. 
+
+# Loss function 정리
+
+Lconf: 객체의 클래스를 정확하게 분류하기 위한 손실함수. 모델이 예측한 클래스 확률과 클래스 라벨간의 차이를 계산. 일반적으로 Cross Entropy loss 사용
+
+Lloc: 객체의 위치를 정확하게 예측하기 위한 손실 함수. 모델이 예측한 바운딩 박스의 위치와 실제 박스간의 차이를 측정. 대표적으로 Smooth L1, Smooth L2 사용됨
